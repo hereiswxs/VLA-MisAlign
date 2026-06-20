@@ -4,13 +4,13 @@ VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Mo
 
 <div align="center">
   
-  [📄[Paper](https://dl.acm.org/doi/pdf/10.1145/3774904.3792315)] &nbsp;&nbsp; [📁[Project](https://github.com/Dongxiaorong-0607/MAVLA/tree/main)]
+  [📄[Conference Version](https://dl.acm.org/doi/pdf/10.1145/3774904.3792315)] &nbsp;&nbsp; [📁[Project]([(https://github.com/hereiswxs/VLA-MisAlign)])
   
 </div>
 
 ## Overview
 
-This repository provides the official implementation and benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We investigate the reliability risks of Vision-Language-Action (VLA) models and demonstrate how disrupted cross-modal alignment can lead to erroneous robotic behaviors. To highlight this vulnerability, we propose VLA-MisAlign, a semantic-guided adversarial attack that weakens the alignment between visual observations and language instructions through imperceptible image perturbations. Extensive experiments on LIBERO, LIBERO-Plus, and real-world robots demonstrate consistent performance degradation across various VLA models, highlighting the critical importance of robust cross-modal alignment in ensuring trustworthy embodied intelligence.
+This repository provides the official implementation and benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We investigate the reliability risks of Vision-Language-Action (VLA) models and demonstrate how disrupted cross-modal alignment can lead to erroneous robotic behaviors. To highlight this vulnerability, we propose VLA-MisAlign, a semantic-guided adversarial attack that weakens the alignment between visual observations and language instructions through imperceptible image perturbations. Extensive experiments on LIBERO, LIBERO-Plus, and real-world robots demonstrate consistent performance degradation across various VLA models.
 
 ---
 
