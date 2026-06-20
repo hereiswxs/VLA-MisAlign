@@ -4,8 +4,7 @@ VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Mo
 
 <div align="center">
   
-  [📄[Conference Version](https://dl.acm.org/doi/pdf/10.1145/3774904.3792315)] &nbsp;&nbsp; [📁[Project]([(https://github.com/hereiswxs/VLA-MisAlign)])]
-  
+  [📄[Conference Version](https://dl.acm.org/doi/pdf/10.1145/3774904.3792315)] &nbsp;&nbsp; [📁[Project](https://github.com/hereiswxs/VLA-MisAlign)]
   
 </div>
 
