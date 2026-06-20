@@ -1,5 +1,5 @@
 <h1 align="center">
-MAVLA: A Multimodal Adversarial Attack Framework for Vision-Language-Action Models
+VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Models
 </h1>
 
 <div align="center">
@@ -10,7 +10,9 @@ MAVLA: A Multimodal Adversarial Attack Framework for Vision-Language-Action Mode
 
 ## Overview
 
-This repository provides the official implementation and experimental benchmarks for our paper "Breaking Cross-modal Alignment in Embodied Intelligence: A Multimodal Adversarial Attack Framework for Vision-Language-Action Models." We systematically expose critical vulnerabilities in contemporary VLA models through a novel multimodal adversarial attack framework (MAVLA).
+This repository provides the official implementation and experimental benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We systematically investigate the behavioral reliability risks of contemporary Vision-Language-Action (VLA) models by revealing how disruptions in cross-modal alignment can propagate through the perception–decision–action pipeline and induce erroneous robotic behaviors.
+
+To expose this vulnerability, we propose VLA-MisAlign, a semantic-guided multimodal adversarial attack framework that operates as a plug-and-play front-end for VLA models. By injecting visually imperceptible perturbations into task-relevant and structure-sensitive image regions, VLA-MisAlign weakens the semantic correspondence between visual observations and language instructions while preserving visual fidelity. Extensive experiments on LIBERO and LIBERO-Plus, together with real-world robotic evaluations, demonstrate that VLA-MisAlign significantly reduces task success rates across diverse VLA architectures, highlighting the critical role of cross-modal alignment in trustworthy embodied intelligence.
 
 ---
 
