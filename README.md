@@ -10,9 +10,7 @@ VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Mo
 
 ## Overview
 
-This repository provides the official implementation and experimental benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We systematically investigate the behavioral reliability risks of contemporary Vision-Language-Action (VLA) models by revealing how disruptions in cross-modal alignment can propagate through the perception–decision–action pipeline and induce erroneous robotic behaviors.
-
-To expose this vulnerability, we propose VLA-MisAlign, a semantic-guided multimodal adversarial attack framework that operates as a plug-and-play front-end for VLA models. By injecting visually imperceptible perturbations into task-relevant and structure-sensitive image regions, VLA-MisAlign weakens the semantic correspondence between visual observations and language instructions while preserving visual fidelity. Extensive experiments on LIBERO and LIBERO-Plus, together with real-world robotic evaluations, demonstrate that VLA-MisAlign significantly reduces task success rates across diverse VLA architectures, highlighting the critical role of cross-modal alignment in trustworthy embodied intelligence.
+This repository provides the official implementation and benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We investigate the reliability risks of Vision-Language-Action (VLA) models and demonstrate how disrupted cross-modal alignment can lead to erroneous robotic behaviors. To highlight this vulnerability, we propose VLA-MisAlign, a semantic-guided adversarial attack that weakens the alignment between visual observations and language instructions through imperceptible image perturbations. Extensive experiments on LIBERO, LIBERO-Plus, and real-world robots demonstrate consistent performance degradation across various VLA models, highlighting the critical importance of robust cross-modal alignment in ensuring trustworthy embodied intelligence.
 
 ---
 
