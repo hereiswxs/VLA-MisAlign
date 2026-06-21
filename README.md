@@ -17,8 +17,11 @@ This repository provides the official implementation and benchmarks for our pape
 ## Environment
 
 python3.10
+
 CUDA12.4	     
+
 PyTorch 2.5.1 + cu121
+
 flash-attn 2.5.x
 
 ## Quick Start
