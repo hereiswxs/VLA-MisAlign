@@ -16,9 +16,9 @@ This repository provides the official implementation and benchmarks for our pape
 
 ## Environment
 
-python3.10
+python 3.10
 
-CUDA12.4	     
+CUDA 12.4	     
 
 PyTorch 2.5.1 + cu121
 
