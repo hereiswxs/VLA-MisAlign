@@ -41,7 +41,7 @@ We evaluate VLA-MisAlign on:
 - [OpenVLA](https://github.com/openvla/openvla)
 - [CEED-VLA](https://github.com/OpenHelix-Team/CEED-VLA)
 - [SmolVLA](https://huggingface.co/lerobot/smolvla_base)
-- [OpenVLA-OFT](https://github.com/moojink/openvla-oft)
+- [OpenVLA-OFT+](https://github.com/moojink/openvla-oft)
 
 ### 2. Download checkpoints
 
@@ -211,7 +211,7 @@ Effectiveness of attacks on the victim models under different perturbation ratio
 
 ---
 
-### OpenVLA-OFT
+### OpenVLA-OFT+
 
 <p align="center">
   <img src="images/twoviews.png" width="85%">
