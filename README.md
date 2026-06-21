@@ -22,7 +22,7 @@ This repository provides the official implementation and benchmarks for our pape
 
 Please download and preprocess datasets from:👉 [LIBERO](https://libero-project.github.io/datasets)
 
-#### 2. Train MAVLA
+#### 2. Train VLA-MisAlign
 
 ```bash
 bash scripts/train.sh
