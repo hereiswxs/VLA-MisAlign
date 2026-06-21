@@ -18,11 +18,20 @@ This repository provides the official implementation and benchmarks for our pape
 
 python 3.10
 
-CUDA 12.4	     
+Install [PyTorch](https://pytorch.org/get-started/locally/).
+This command is just an example, the exact version should be chosen based on your hardware configuration from the link.
 
-PyTorch 2.5.1 + cu121
+```bash
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia -y
+```
 
-flash-attn 2.5.x
+Install Flash Attention 2
+
+```bash
+pip install packaging ninja
+ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
+pip install "flash-attn==2.5.5" --no-build-isolatio
+```
 
 ## Quick Start
 
