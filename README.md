@@ -14,16 +14,6 @@ This repository provides the official implementation and benchmarks for our pape
 
 ---
 
-## Environment
-
-```bash
-conda create -n mavla python=3.10
-conda activate mavla
-
-pip install -r requirements.txt
-```
-
-
 ## Quick Start
 
 ### Training
@@ -38,11 +28,22 @@ Please download and preprocess datasets from:👉 [LIBERO](https://libero-projec
 bash scripts/train.sh
 ```
 
+The `train_weight` folder contains pre-trained weight files that can be directly used for evaluation.
+
 ---
 
 ## Evaluation
 
-### 1. Download checkpoints
+### 1.Evaluated Models
+
+We evaluate VLA-MisAlign on:
+
+- [OpenVLA](https://github.com/openvla/openvla)
+- [CEED-VLA](https://github.com/OpenHelix-Team/CEED-VLA)
+- [SmolVLA](https://huggingface.co/lerobot/smolvla_base)
+- [OpenVLA-OFT](https://github.com/moojink/openvla-oft)
+
+### 2. Download checkpoints
 
 Here we provide OpenVLA checkpoints as examples. For other victim models, please refer to their official repositories or model pages for checkpoint downloads.
 
@@ -54,18 +55,10 @@ Here we provide OpenVLA checkpoints as examples. For other victim models, please
 
 [openvla-7b-finetuned-libero-10](https://huggingface.co/openvla/openvla-7b-finetuned-libero-10)
 
-### 2.Evaluated Models
-
-We evaluate MAVLA on:
-
-- [OpenVLA](https://github.com/openvla/openvla)
-- [CEED-VLA](https://github.com/OpenHelix-Team/CEED-VLA)
-- [SmolVLA](https://huggingface.co/lerobot/smolvla_base)
-- [OpenVLA-OFT](https://github.com/moojink/openvla-oft)
 
 ### 3. Run evaluation
 
-Example: evaluating MAVLA on `LIBERO-Object` with OpenVLA.
+Example: evaluating VLA-MisAlign on `LIBERO-Object` with OpenVLA.
 ```
 python experiments/robot/libero/adv_run_libero_eval.py \
     --model_family openvla \
