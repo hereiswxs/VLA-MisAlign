@@ -248,18 +248,4 @@ Effectiveness of attacks on the victim models under different perturbation ratio
 
 </div>
 
----
 
-## Citation
-
-If you find our work useful, please cite:
-
-```bibtex
-@inproceedings{zhao2026breaking,
-  title={Breaking Cross-modal Alignment in Embodied Intelligence: A Multimodal Adversarial Attack Framework for Vision-Language-Action Models},
-  author={Zhao, Zhihui and Dong, Xiaorong and Zheng, Yaowen and Chen, Xiaohui and Ren, Yimo and Cheng, Hangbei and Chen, Yongle and Sun, Limin},
-  booktitle={Proceedings of the ACM Web Conference 2026},
-  pages={2824--2834},
-  year={2026}
-}
-```
