@@ -19,7 +19,7 @@ This repository provides the official implementation and benchmarks for our pape
 
 $$\mathcal{L}_{total}=\lambda_1 \mathcal{L}_{noise}+\lambda_2 \mathcal{L}_{feat}+\lambda_3 \mathcal{L}_{align}+\lambda_4 \mathcal{L}_{lpips}$$
 
-where $$\mathcal{L}_{feat}$$ and $$\mathcal{L}_{align}$$ jointly promote behavioral reliability degradation by inducing feature-level and cross-modal misalignment, while $$\mathcal{L}_{lpips}$$ and $$\mathcal{L}_{noise}$$ jointly ensure stealthiness.
+where `L_feat` and `L_align` jointly promote behavioral reliability degradation by inducing feature-level and cross-modal misalignment, while `L_lpips` and `L_noise` jointly ensure stealthiness.
 
 
 
