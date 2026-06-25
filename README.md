@@ -61,7 +61,7 @@ $$
 
 The minimally damaged low-level features allow the closed-loop policy to recover the correct task semantics, thereby preventing a stable deviation in the action output.
 
-Therefore, only through the joint optimization of $\mathcal{L}_{feat}$ and $\mathcal{L}_{align}$ can the inherent attention tolerance and feature self-repair boundaries of the model be broken, thereby causing the final action output to deviate as expected.
+Therefore, only through the joint optimization of `L_feat` and `L_align` can the inherent attention tolerance and feature self-repair boundaries of the model be broken, thereby causing the final action output to deviate as expected.
 
 ### 2. Stealthiness
 
@@ -87,9 +87,7 @@ $$
 S(I, I+\delta) > \tau_{semantic}
 $$
 
-Therefore, only by simultaneously constraining the perturbation magnitude with $\mathcal{L}_{noise}$
-
-and preserving the semantic structure with $\mathcal{L}_{lpips}$ can visual imperceptibility be guaranteed.
+Therefore, only by simultaneously constraining the perturbation magnitude with `L_noise` and preserving the semantic structure with `L_lpips` can visual imperceptibility be guaranteed.
 
 ---
 ## Environment
