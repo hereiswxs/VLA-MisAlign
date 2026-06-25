@@ -19,11 +19,11 @@ This repository provides the official implementation and benchmarks for our pape
 
 $$\mathcal{L}_{total}=\lambda_1 \mathcal{L}_{noise}+\lambda_2 \mathcal{L}_{feat}+\lambda_3 \mathcal{L}_{align}+\lambda_4 \mathcal{L}_{lpips}$$
 
-where $\mathcal{L}_{feat}$ and $\mathcal{L}_{align}$ jointly promote behavioral reliability degradation by inducing feature-level and cross-modal misalignment, while $\mathcal{L}_{lpips}$ and $\mathcal{L}_{noise}$ jointly ensure stealthiness.
+where $$\mathcal{L}_{feat}$$ and $$\mathcal{L}_{align}$$ jointly promote behavioral reliability degradation by inducing feature-level and cross-modal misalignment, while $$\mathcal{L}_{lpips}$$ and $$\mathcal{L}_{noise}$$ jointly ensure stealthiness.
 
-**Analysis.**
+### Analysis
 
-### 1. Behavioral Reliability Degradation
+#### 1. Behavioral Reliability Degradation
 
 Let the action decision boundary threshold be $\tau_{action}$, and let $D(\cdot)$ denote the distance metric in the action decision space. The fused representations of the clean input and the perturbed input are denoted as $z_{ori}$ and $z_{pert}$, respectively. A stable behavioral deviation can be induced only when the representation shift exceeds the action decision boundary:
 
@@ -63,7 +63,7 @@ The minimally damaged low-level features allow the closed-loop policy to recover
 
 Therefore, only through the joint optimization of $\mathcal{L}_{feat}$ and $\mathcal{L}_{align}$ can the inherent attention tolerance and feature self-repair boundaries of the model be broken, thereby causing the final action output to deviate as expected.
 
-### 2. Stealthiness
+#### 2. Stealthiness
 
 Let the original image be $I$ and the perturbed image be $I+\delta$. $P(\cdot)$ and $S(\cdot)$ denote the low-level pixel-wise visible difference and the high-level perceptual structural difference, respectively. $\tau_{pixel}$ and $\tau_{semantic}$ are the corresponding observer-perceptibility thresholds. To satisfy visual imperceptibility, the following conditions should hold:
 
