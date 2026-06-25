@@ -87,7 +87,9 @@ $$
 S(I, I+\delta) > \tau_{semantic}
 $$
 
-Therefore, the perturbation magnitude should be constrained by $\mathcal{L}_{\mathrm{noise}}$, while the semantic structure should be preserved by $\mathcal{L}_{\mathrm{lpips}}$. Only under these two constraints can visual imperceptibility be guaranteed.
+Therefore, only by simultaneously constraining the perturbation magnitude with $\mathcal{L}_{noise}$
+
+and preserving the semantic structure with $\mathcal{L}_{lpips}$ can visual imperceptibility be guaranteed.
 
 ---
 ## Environment
