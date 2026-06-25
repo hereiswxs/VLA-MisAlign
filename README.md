@@ -87,7 +87,7 @@ $$
 S(I, I+\delta) > \tau_{semantic}
 $$
 
-Therefore, only by simultaneously constraining the perturbation magnitude with `L_noise` and preserving the semantic structure with `L_lpips` can stealthiness be guaranteed.
+Therefore, only by simultaneously constraining the perturbation magnitude with $\mathcal{L}_{noise}$ and preserving the semantic structure with $\mathcal{L}_{lpips}$ can stealthiness be guaranteed.
 
 ---
 ## Environment
