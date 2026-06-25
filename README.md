@@ -1,5 +1,5 @@
 <h1 align="center">
-VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Models
+VLA-MisAlign: Revealing Behavioral Reliability Risks in Vision-Language-Action Models via Cross-Modal Alignment Disruption
 </h1>
 
 <div align="center">
@@ -10,10 +10,96 @@ VLA-MisAlign: A Semantic-Guided Adversarial Attack for Vision-Language-Action Mo
 
 ## Overview
 
-This repository provides the official implementation and benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We investigate the reliability risks of Vision-Language-Action (VLA) models and demonstrate how disrupted cross-modal alignment can lead to erroneous robotic behaviors. To highlight this vulnerability, we propose VLA-MisAlign, a semantic-guided adversarial attack that weakens the alignment between visual observations and language instructions through imperceptible image perturbations. 
+This repository provides the official implementation and benchmarks for our paper “Can We Trust VLA Models? Undermining Behavioral Reliability via Cross-Modal Alignment Disruption.” We investigate the behavioral reliability risks of Vision-Language-Action (VLA) models and demonstrate that disrupted cross-modal alignment can lead to erroneous robotic behaviors. To expose and evaluate this vulnerability, we introduce VLA-MisAlign, a transferable and low-overhead adversarial attack framework that selectively weakens cross-modal alignment through visually imperceptible perturbations.
 
 ---
+## Theoretical Analysis
 
+**Claim.** In **VLA-MisAlign**, a semantic-guided adversarial attack framework for VLA models, the four loss functions are jointly optimized to expose behavioral reliability risks caused by cross-modal alignment disruption while preserving visual imperceptibility: 
+
+$$
+\mathcal{L}_{total}
+=
+\lambda_1 \mathcal{L}_{noise}
++
+\lambda_2 \mathcal{L}_{feat}
++
+\lambda_3 \mathcal{L}_{align}
++
+\lambda_4 \mathcal{L}_{lpips}
+$$
+
+where $\mathcal{L}_{feat}$ and $\mathcal{L}_{align}$ jointly promote behavioral reliability degradation by inducing feature-level and cross-modal misalignment, while $\mathcal{L}_{lpips}$ and $\mathcal{L}_{noise}$ jointly ensure stealthiness.
+
+**Analysis.**
+
+### 1. Behavioral Reliability Degradation
+
+Let the action decision boundary threshold be $\tau_{action}$, and let $D(\cdot)$ denote the distance metric in the action decision space. The fused representations of the clean input and the perturbed input are denoted as $z_{ori}$ and $z_{pert}$, respectively. A stable behavioral deviation can be induced only when the representation shift exceeds the action decision boundary:
+
+$$
+D(z_{pert}, z_{ori}) > \tau_{action}
+$$
+
+When the perturbation is driven only by $\mathcal{L}_{feat}$, the image-text alignment relationship that has not been explicitly disrupted still acts as a strong semantic constraint during multimodal fusion. Through the attention mechanism, this constraint offsets the unimodal visual shift. As a result, the misalignment is compressed within the alignment tolerance range $\epsilon_a$:
+
+$$
+\left|
+sim(v_{pert}, t) - sim(v_{ori}, t)
+\right|
+< \epsilon_a
+$$
+
+In this case,
+
+$$
+D(z_{pert}, z_{ori}) \leq \tau_{action}
+$$
+
+and the perturbation cannot stably change the action output.
+
+When the perturbation is driven only by $\mathcal{L}_{align}$, the inter-layer feature structure of the visual encoder remains undamaged. The mean squared error between the layer-wise features of the original image $I$ and the perturbed image $I+\delta$ is constrained to a very small value $\epsilon_f$:
+
+$$
+\frac{1}{L}
+\sum_{l=1}^{L}
+\left\|
+F_l(I) - F_l(I+\delta)
+\right\|_2^2
+< \epsilon_f
+$$
+
+The minimally damaged low-level features allow the closed-loop policy to recover the correct task semantics, thereby preventing a stable deviation in the action output.
+
+Therefore, only through the joint optimization of $\mathcal{L}_{feat}$ and $\mathcal{L}_{align}$ can the inherent attention tolerance and feature self-repair boundaries of the model be broken, thereby causing the final action output to deviate as expected.
+
+### 2. Stealthiness
+
+Let the original image be $I$ and the perturbed image be $I+\delta$. $P(\cdot)$ and $S(\cdot)$ denote the low-level pixel-wise visible difference and the high-level perceptual structural difference, respectively. $\tau_{pixel}$ and $\tau_{semantic}$ are the corresponding observer-perceptibility thresholds. To satisfy visual imperceptibility, the following conditions should hold:
+
+$$
+P(I, I+\delta) \leq \tau_{pixel}
+\quad \text{and} \quad
+S(I, I+\delta) \leq \tau_{semantic}
+$$
+
+When only $\mathcal{L}_{lpips}$ is used as the constraint, the optimization tends to preserve the overall perceptual structure of the image, but lacks explicit constraints on low-level pixel variations. The perturbation generator may produce local high-frequency noise or abnormal textures, leading to:
+
+$$
+P(I, I+\delta) > \tau_{pixel}
+$$
+
+Thus, stealthiness cannot be guaranteed.
+
+When only $\mathcal{L}_{noise}$ is used as the constraint, the perturbation magnitude and local abrupt changes are suppressed. However, if small perturbations are concentrated around the contours, edges, or key texture regions of task-relevant objects, they may still distort the high-level perceptual layout of the image, resulting in:
+
+$$
+S(I, I+\delta) > \tau_{semantic}
+$$
+
+Therefore, only by simultaneously constraining the perturbation magnitude with $\mathcal{L}_{noise}$ and preserving the semantic structure with $\mathcal{L}_{lpips}$ can stealthiness be guaranteed.
+
+---
 ## Environment
 
 python 3.10
@@ -92,7 +178,7 @@ python experiments/robot/libero/adv_run_libero_eval.py \
 
 ## Results
 
-Effectiveness of attacks on the victim models under different perturbation ratios.
+Effectiveness of attacks on the evaluated models under different perturbation ratios.
 
 ### OpenVLA
 
